@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="nav_menu_items">
+        <item>Category</item>
+        <item>About</item>
+
+        <item>Category</item>
+        <item>Phone Numbers</item>
+        <item>Links</item>
+        <item>Places</item>
+
+    </string-array>       
+</resources>

@@ -1,0 +1,7 @@
+C:\Users\Leonel\AndroidStudioProjects\NavigationCM\app\build\intermediates\classes\debug
+C:\Users\Leonel\AndroidStudioProjects\NavigationCM\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-595d0275e03ed44e5fc865b538a26cda00f78f33.jar
+C:\Users\Leonel\AndroidStudioProjects\NavigationCM\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-f8c241ac5f915f014282ea073437f1ae397e2fba.jar
+C:\Users\Leonel\AndroidStudioProjects\NavigationCM\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-1f87053920e667b551cfd73ae0c5aa7c49f5938c.jar
+C:\Users\Leonel\AndroidStudioProjects\NavigationCM\app\build\intermediates\pre-dexed\debug\classes-7cf785389f55489feebf3429a2685adc765e1ce8.jar
+C:\Users\Leonel\AndroidStudioProjects\NavigationCM\app\build\intermediates\pre-dexed\debug\Parse-1.8.0-c4e89cbadd676268be77f8d70ba5b067a1c5154d.jar
+C:\Users\Leonel\AndroidStudioProjects\NavigationCM\app\build\intermediates\pre-dexed\debug\classes-824fe3c2905c8fa6c0dcaa8893be7f269b9410b1.jar

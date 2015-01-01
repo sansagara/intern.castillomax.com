@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="nav_menu_items">
+        <item>Principal</item>
+        <item>La Empresa</item>
+
+        <item>Informacion</item>
+        <item>Telefonos</item>
+        <item>Vinculos</item>
+        <item>Lugares</item>
+
+    </string-array>
+</resources>

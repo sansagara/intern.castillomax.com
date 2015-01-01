@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Navigation -->
+    <string name="header">Usuario</string>
+
+    <string name="app_name">Castillomax</string>
+    <string name="clear">Borrar</string>
+    <string name="add">Agregar</string>
+    <string name="delete">Excluir</string>
+    <string name="done">Listo</string>
+    <string name="discard">Descartar</string>
+    <string name="search">Buscar</string>
+    <string name="update">Atualizar</string>
+
+    <string name="drawer_open">Abrir Navegacion</string>
+    <string name="drawer_close">Cerrar Navegacion</string>
+</resources >
