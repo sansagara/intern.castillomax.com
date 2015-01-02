@@ -1339,11 +1339,15 @@ containing a value of this type.
         public static final int ic_launcher=0x7f020043;
         public static final int ic_liveo=0x7f020044;
         public static final int ic_user=0x7f020045;
-        public static final int rectangle_counter=0x7f020046;
-        public static final int seletor_item_navigation=0x7f020047;
+        public static final int linkedin=0x7f020046;
+        public static final int maps=0x7f020047;
+        public static final int rectangle_counter=0x7f020048;
+        public static final int seletor_item_navigation=0x7f020049;
+        public static final int twitter=0x7f02004a;
+        public static final int website=0x7f02004b;
     }
     public static final class id {
-        public static final int ImgDrawer=0x7f090049;
+        public static final int ImgDrawer=0x7f09004d;
         public static final int action_bar=0x7f090031;
         public static final int action_bar_activity_content=0x7f090000;
         public static final int action_bar_container=0x7f090030;
@@ -1362,8 +1366,8 @@ containing a value of this type.
         public static final int beginning=0x7f090013;
         public static final int checkbox=0x7f090029;
         public static final int collapseActionView=0x7f090017;
-        public static final int content_frame=0x7f090045;
-        public static final int counter=0x7f090043;
+        public static final int content_frame=0x7f090049;
+        public static final int counter=0x7f090047;
         public static final int decor_content_parent=0x7f09002f;
         public static final int default_activity_button=0x7f090024;
         public static final int dialog=0x7f09001b;
@@ -1379,23 +1383,23 @@ containing a value of this type.
         public static final int ifRoom=0x7f090018;
         public static final int image=0x7f090023;
         public static final int imgLiveo=0x7f09003f;
-        public static final int layoutDrawer=0x7f090044;
-        public static final int linearDrawer=0x7f09004e;
-        public static final int listDrawer=0x7f09004d;
+        public static final int layoutDrawer=0x7f090048;
+        public static final int linearDrawer=0x7f090052;
+        public static final int listDrawer=0x7f090051;
         public static final int listMode=0x7f090009;
         public static final int list_item=0x7f090025;
-        public static final int menu_add=0x7f090050;
-        public static final int menu_search=0x7f090051;
-        public static final int menu_update=0x7f090052;
+        public static final int menu_add=0x7f090054;
+        public static final int menu_search=0x7f090055;
+        public static final int menu_update=0x7f090056;
         public static final int middle=0x7f090015;
         public static final int never=0x7f090019;
         public static final int none=0x7f09000e;
         public static final int normal=0x7f09000a;
-        public static final int ns_menu_row=0x7f090042;
+        public static final int ns_menu_row=0x7f090046;
         public static final int progress_circular=0x7f090005;
         public static final int progress_horizontal=0x7f090006;
         public static final int radio=0x7f09002b;
-        public static final int relativeDrawer=0x7f090046;
+        public static final int relativeDrawer=0x7f09004a;
         public static final int search_badge=0x7f090035;
         public static final int search_bar=0x7f090034;
         public static final int search_button=0x7f090036;
@@ -1415,15 +1419,19 @@ containing a value of this type.
         public static final int tabMode=0x7f09000b;
         public static final int title=0x7f090027;
         public static final int txtDownload=0x7f090040;
-        public static final int txtRoute=0x7f09004f;
-        public static final int txt_user_lastname_drawer=0x7f09004b;
-        public static final int txt_user_name_drawer=0x7f09004a;
+        public static final int txtLinkedIn=0x7f090043;
+        public static final int txtMaps=0x7f090044;
+        public static final int txtRoute=0x7f090053;
+        public static final int txtTwitter=0x7f090042;
+        public static final int txtWebsite=0x7f090041;
+        public static final int txt_user_lastname_drawer=0x7f09004f;
+        public static final int txt_user_name_drawer=0x7f09004e;
         public static final int up=0x7f090008;
         public static final int useLogo=0x7f090012;
-        public static final int userContent=0x7f090047;
-        public static final int userDrawer=0x7f090048;
-        public static final int viewNavigation=0x7f090041;
-        public static final int viewSeparator=0x7f09004c;
+        public static final int userContent=0x7f09004b;
+        public static final int userDrawer=0x7f09004c;
+        public static final int viewNavigation=0x7f090045;
+        public static final int viewSeparator=0x7f090050;
         public static final int withText=0x7f09001a;
         public static final int wrap_content=0x7f09001d;
     }
@@ -1460,7 +1468,7 @@ containing a value of this type.
         public static final int navigation_item_counter=0x7f03001a;
         public static final int navigation_main=0x7f03001b;
         public static final int navigation_main_include=0x7f03001c;
-        public static final int route_fragment=0x7f03001d;
+        public static final int places_fragment =0x7f03001d;
         public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
@@ -1493,9 +1501,13 @@ containing a value of this type.
         public static final int drawer_open=0x7f0b0017;
         public static final int header=0x7f0b0018;
         public static final int hello_blank_fragment=0x7f0b0019;
-        public static final int owner=0x7f0b001a;
-        public static final int search=0x7f0b001b;
-        public static final int update=0x7f0b001c;
+        public static final int linkedin_url=0x7f0b001a;
+        public static final int maps_url=0x7f0b001b;
+        public static final int owner=0x7f0b001c;
+        public static final int search=0x7f0b001d;
+        public static final int twitter_url=0x7f0b001e;
+        public static final int update=0x7f0b001f;
+        public static final int website_url=0x7f0b0020;
     }
     public static final class style {
         /** 

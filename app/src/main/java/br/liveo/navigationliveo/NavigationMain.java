@@ -23,8 +23,9 @@ import com.parse.Parse;
 
 import br.liveo.adapter.NavigationAdapter;
 import br.liveo.fragments.AboutFragment;
-import br.liveo.fragments.RouteFragment;
+import br.liveo.fragments.PlacesFragment;
 import br.liveo.fragments.LinksFragment;
+import br.liveo.fragments.PhonesFragment;
 import br.liveo.utils.Constant;
 import br.liveo.utils.Menus;
 import br.liveo.utils.Utils;
@@ -110,10 +111,13 @@ public class NavigationMain extends ActionBarActivity{
 			mFragment = new AboutFragment().newInstance(Utils.getTitleItem(NavigationMain.this, Constant.MENU_ABOUT));
 			break;			
 		case Constant.MENU_PHONE:
-			mFragment = new RouteFragment().newInstance(Utils.getTitleItem(NavigationMain.this, Constant.MENU_PHONE));
+			mFragment = new PhonesFragment().newInstance(Utils.getTitleItem(NavigationMain.this, Constant.MENU_PHONE));
 			break;
         case Constant.MENU_LINKS:
             mFragment = new LinksFragment().newInstance(Utils.getTitleItem(NavigationMain.this, Constant.MENU_LINKS));
+            break;
+        case Constant.MENU_PLACES:
+            mFragment = new PlacesFragment().newInstance(Utils.getTitleItem(NavigationMain.this, Constant.MENU_PLACES));
             break;
         }
 		

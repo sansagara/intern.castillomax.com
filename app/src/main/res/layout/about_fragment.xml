@@ -24,40 +24,59 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
+        android:id="@+id/txtWebsite"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imgLiveo"
+        android:layout_below="@+id/txtDownload"
         android:gravity="center"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:text="@string/website_url"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:drawableLeft="@drawable/website"
+        android:drawablePadding="10dip"
+        android:paddingLeft="50dip"
+        android:paddingRight="50dip"/>
 
     <TextView
+        android:id="@+id/txtTwitter"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imgLiveo"
+        android:layout_below="@+id/txtWebsite"
         android:gravity="center"
         android:layout_marginTop="16dp"
         android:text="@string/twitter_url"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:drawableLeft="@drawable/twitter"
+        android:drawablePadding="10dip"
+        android:paddingLeft="50dip"
+        android:paddingRight="50dip"/>
 
     <TextView
+        android:id="@+id/txtLinkedIn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imgLiveo"
+        android:layout_below="@+id/txtTwitter"
         android:gravity="center"
         android:layout_marginTop="16dp"
         android:text="@string/linkedin_url"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:drawableLeft="@drawable/linkedin"
+        android:drawablePadding="10dip"
+        android:paddingLeft="50dip"
+        android:paddingRight="50dip"/>
 
     <TextView
+        android:id="@+id/txtMaps"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imgLiveo"
+        android:layout_below="@+id/txtLinkedIn"
         android:gravity="center"
         android:layout_marginTop="16dp"
         android:text="@string/maps_url"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:drawableLeft="@drawable/maps"
+        android:drawablePadding="10dip"
+        android:paddingLeft="50dip"
+        android:paddingRight="50dip"/>
 
 </RelativeLayout>

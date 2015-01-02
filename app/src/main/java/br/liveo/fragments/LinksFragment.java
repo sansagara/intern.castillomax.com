@@ -22,8 +22,8 @@ public class LinksFragment extends Fragment {
     private TextView mTxtRoute;
     private boolean mSearchCheck;
 
-    public RouteFragment newInstance(String text){
-        RouteFragment mFragment = new RouteFragment();
+    public PlacesFragment newInstance(String text){
+        PlacesFragment mFragment = new PlacesFragment();
         Bundle mBundle = new Bundle();
         mBundle.putString(Constant.TEXT_FRAGMENT, text);
         mFragment.setArguments(mBundle);
@@ -33,8 +33,9 @@ public class LinksFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // TODO Auto-generated method stub
-        View rootView = inflater.inflate(R.layout.route_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.places_fragment, container, false);
 
         mTxtRoute = (TextView) rootView.findViewById(R.id.txtRoute);
         mTxtRoute.setText(getArguments().getString(Constant.TEXT_FRAGMENT));

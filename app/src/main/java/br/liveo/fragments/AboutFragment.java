@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.SearchView.OnQueryTextListener;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -33,6 +34,7 @@ public class AboutFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+
 		// TODO Auto-generated method stub		
 		View rootView = inflater.inflate(R.layout.about_fragment, container, false);
 		
@@ -46,6 +48,17 @@ public class AboutFragment extends Fragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+
+        //Make Links in TextViews Clickable
+        TextView website = (TextView) getView().findViewById(R.id.txtWebsite);
+        website.setMovementMethod(LinkMovementMethod.getInstance());
+        TextView twitter = (TextView) getView().findViewById(R.id.txtTwitter);
+        twitter.setMovementMethod(LinkMovementMethod.getInstance());
+        TextView linkedin = (TextView) getView().findViewById(R.id.txtLinkedIn);
+        linkedin.setMovementMethod(LinkMovementMethod.getInstance());
+        TextView maps = (TextView) getView().findViewById(R.id.txtMaps);
+        maps.setMovementMethod(LinkMovementMethod.getInstance());
+
 		super.onActivityCreated(savedInstanceState);
 		setHasOptionsMenu(true);
 	}
