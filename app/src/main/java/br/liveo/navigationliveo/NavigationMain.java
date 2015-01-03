@@ -26,6 +26,7 @@ import br.liveo.fragments.AboutFragment;
 import br.liveo.fragments.PlacesFragment;
 import br.liveo.fragments.LinksFragment;
 import br.liveo.fragments.PhonesFragment;
+
 import br.liveo.utils.Constant;
 import br.liveo.utils.Menus;
 import br.liveo.utils.Utils;

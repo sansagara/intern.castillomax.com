@@ -22,8 +22,8 @@ public class LinksFragment extends Fragment {
     private TextView mTxtRoute;
     private boolean mSearchCheck;
 
-    public PlacesFragment newInstance(String text){
-        PlacesFragment mFragment = new PlacesFragment();
+    public LinksFragment newInstance(String text){
+        LinksFragment mFragment = new LinksFragment();
         Bundle mBundle = new Bundle();
         mBundle.putString(Constant.TEXT_FRAGMENT, text);
         mFragment.setArguments(mBundle);
@@ -35,7 +35,7 @@ public class LinksFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // TODO Auto-generated method stub
-        View rootView = inflater.inflate(R.layout.places_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.links_fragment, container, false);
 
         mTxtRoute = (TextView) rootView.findViewById(R.id.txtRoute);
         mTxtRoute.setText(getArguments().getString(Constant.TEXT_FRAGMENT));
