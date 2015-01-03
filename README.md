@@ -1,4 +1,3 @@
-intern.castillomax.com
 Castillomax Internal Android App
 ======================
 
