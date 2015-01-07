@@ -48,11 +48,11 @@ public class PlacesAdapter extends ArrayAdapter {
         ParseObject placesObject = mPlaces.get(position);
 
         // title
-        String place = placesObject.getString("placeName");
+        String place = placesObject.getString("Clinica");
         holder.placeName.setText(place);
 
         // content
-        String description = placesObject.getString("placeDescription");
+        String description = placesObject.getString("Direccion");
         holder.placeDescription.setText(description);
 
         return convertView;
