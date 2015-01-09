@@ -20,8 +20,16 @@
     <string name="example_place">Lugar 1</string>
     <string name="example_place_description">Direccion Lugar 1</string>
 
-    <string name="links_title">Vinculoss Relevantes</string>
+    <string name="links_title">Vinculos Relevantes</string>
     <string name="example_link">Vinculo</string>
     <string name="example_link_description">Direccion del Vinculo</string>
+
+    <string name="phone_title">Numeros Relevantes</string>
+    <string name="example_phone">Persona</string>
+    <string name="example_phone_number"># Telefono</string>
+
+    <string name="yourqueryfor">Su búsqueda de</string>
+    <string name="returned">devolvió</string>
+    <string name="elements">elementos</string>
 
 </resources >

@@ -1,6 +1,9 @@
 package br.liveo.fragments;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+
+import android.support.v4.app.ListFragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.SearchView.OnQueryTextListener;
@@ -12,16 +15,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
+
+import br.liveo.adapter.PhonesAdapter;
 import br.liveo.navigationliveo.R;
 import br.liveo.utils.Constant;
 import br.liveo.utils.Menus;
 
-public class PhonesFragment extends Fragment {
-	
-	private TextView mTxtRoute;
+public class PhonesFragment extends ListFragment {
+
 	private boolean mSearchCheck;
+    protected List<ParseObject> mPhones;
 	
 	public PhonesFragment newInstance(String text){
 		PhonesFragment mFragment = new PhonesFragment();
@@ -37,20 +49,45 @@ public class PhonesFragment extends Fragment {
 
 		// TODO Auto-generated method stub		
 		View rootView = inflater.inflate(R.layout.phones_fragment, container, false);
-
-		mTxtRoute = (TextView) rootView.findViewById(R.id.txtRoute);
-		mTxtRoute.setText(getArguments().getString(Constant.TEXT_FRAGMENT));
-
 		rootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT ));		
 		return rootView;		
 	}
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
+        //Query All Phones from Parse
+        final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Phones");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> place, ParseException e) {
+                if (e == null) {
+                    mPhones = place;
+
+                    PhonesAdapter adapter = new PhonesAdapter(getActivity(), mPhones);
+                    mlist.setAdapter(adapter);
+                } else {
+                }
+            }
+        });
+
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
-		setHasOptionsMenu(true);										
+		setHasOptionsMenu(true);
 	}
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        ParseObject placesObject = mPhones.get(position);
+        String phoneNumber = placesObject.getString("phoneNumber");
+
+        //Toast.makeText(getActivity(), phoneNumber, Toast.LENGTH_LONG).show();
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:" + phoneNumber));
+        startActivity(callIntent);
+    }
 	
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -65,7 +102,7 @@ public class PhonesFragment extends Fragment {
         .setHintTextColor(getResources().getColor(R.color.white));	    
 	    searchView.setOnQueryTextListener(OnQuerySearchView);
 					    	   	    
-		menu.findItem(Menus.ADD).setVisible(true);
+		menu.findItem(Menus.ADD).setVisible(false);
 		menu.findItem(Menus.UPDATE).setVisible(false);		
 		menu.findItem(Menus.SEARCH).setVisible(true);		
   	    
@@ -94,8 +131,22 @@ public class PhonesFragment extends Fragment {
 	private OnQueryTextListener OnQuerySearchView = new OnQueryTextListener() {
 		
 		@Override
-		public boolean onQueryTextSubmit(String arg0) {
-			// TODO Auto-generated method stub
+		public boolean onQueryTextSubmit(String SearchQuery) {
+            final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Phones");
+            query.whereContains("phoneOwner", SearchQuery);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> place, ParseException e) {
+                    if (e == null) {
+                        mPhones = place;
+
+                        PhonesAdapter adapter = new PhonesAdapter(getActivity(), mPhones);
+                        mlist.setAdapter(adapter);
+                    } else {
+                    }
+                }
+            });
 			return false;
 		}
 		

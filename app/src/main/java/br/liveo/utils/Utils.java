@@ -10,8 +10,8 @@ public class Utils {
 		0,
         R.drawable.ic_action_about,
         0,
-        R.drawable.ic_action_divisao,
-        R.drawable.ic_action_delete,
+        R.drawable.ic_action_call,
+        R.drawable.ic_action_link,
 		R.drawable.ic_action_map,
         };
 	

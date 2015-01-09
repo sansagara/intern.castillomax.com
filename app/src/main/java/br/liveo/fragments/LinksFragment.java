@@ -1,4 +1,6 @@
 package br.liveo.fragments;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
@@ -53,7 +55,7 @@ public class LinksFragment extends ListFragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        //Query All Places from Parse
+        //Query All Links from Parse
         final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Links");
@@ -76,6 +78,18 @@ public class LinksFragment extends ListFragment {
     }
 
     @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        ParseObject placesObject = mLinks.get(position);
+        String linkURL = placesObject.getString("LinkURL");
+
+        //Toast.makeText(getActivity(), linkURL, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                Uri.parse(linkURL));
+        startActivity(intent);
+    }
+
+    @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         // TODO Auto-generated method stub
         super.onCreateOptionsMenu(menu, inflater);
@@ -88,7 +102,7 @@ public class LinksFragment extends ListFragment {
                 .setHintTextColor(getResources().getColor(R.color.white));
         searchView.setOnQueryTextListener(OnQuerySearchView);
 
-        menu.findItem(Menus.ADD).setVisible(true);
+        menu.findItem(Menus.ADD).setVisible(false);
         menu.findItem(Menus.UPDATE).setVisible(false);
         menu.findItem(Menus.SEARCH).setVisible(true);
 
@@ -117,8 +131,22 @@ public class LinksFragment extends ListFragment {
     private OnQueryTextListener OnQuerySearchView = new OnQueryTextListener() {
 
         @Override
-        public boolean onQueryTextSubmit(String arg0) {
-            // TODO Auto-generated method stub
+        public boolean onQueryTextSubmit(String SearchQuery) {
+            final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Links");
+            query.whereContains("Link", SearchQuery);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> place, ParseException e) {
+                    if (e == null) {
+                        mLinks = place;
+
+                        LinksAdapter adapter = new LinksAdapter(getActivity(), mLinks);
+                        mlist.setAdapter(adapter);
+                    } else {
+                    }
+                }
+            });
             return false;
         }
 

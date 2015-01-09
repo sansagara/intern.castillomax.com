@@ -59,6 +59,7 @@ public class PlacesFragment extends ListFragment {
         final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Clinicas");
+        query.orderByAscending("Clinica");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> place, ParseException e) {
@@ -77,12 +78,14 @@ public class PlacesFragment extends ListFragment {
         setHasOptionsMenu(true);
     }
 
-
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         ParseObject placesObject = mPlaces.get(position);
         String placeLink = placesObject.getString("MapsLink");
+        if(placeLink == null || !placeLink.isEmpty()) {
+            placeLink = "https://www.google.co.ve/maps/";
+        }
         //Toast.makeText(getActivity(), placeLink, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
                 Uri.parse(placeLink));
@@ -102,7 +105,7 @@ public class PlacesFragment extends ListFragment {
                 .setHintTextColor(getResources().getColor(R.color.white));
         searchView.setOnQueryTextListener(OnQuerySearchView);
 
-        menu.findItem(Menus.ADD).setVisible(true);
+        menu.findItem(Menus.ADD).setVisible(false);
         menu.findItem(Menus.UPDATE).setVisible(false);
         menu.findItem(Menus.SEARCH).setVisible(true);
 
@@ -131,8 +134,27 @@ public class PlacesFragment extends ListFragment {
     private OnQueryTextListener OnQuerySearchView = new OnQueryTextListener() {
 
         @Override
-        public boolean onQueryTextSubmit(String arg0) {
-            // TODO Auto-generated method stub
+        public boolean onQueryTextSubmit(final String SearchQuery) {
+            
+            final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Clinicas");
+            query.whereContains("Clinica", SearchQuery);
+            query.orderByAscending("Clinica");
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> place, ParseException e) {
+                    if (e == null) {
+                        mPlaces = place;
+                        final Integer mPlacesLength = mPlaces.size();
+                        Toast.makeText(getActivity(), R.string.yourqueryfor + SearchQuery + R.string.returned + mPlacesLength +  R.string.elements, Toast.LENGTH_SHORT).show();
+
+                        PlacesAdapter adapter = new PlacesAdapter(getActivity(), mPlaces);
+                        mlist.setAdapter(adapter);
+                    } else {
+                    }
+                }
+            });
+
             return false;
         }
 
@@ -144,5 +166,6 @@ public class PlacesFragment extends ListFragment {
             }
             return false;
         }
+
     };
 }

@@ -30,5 +30,14 @@
     <string name="example_link">Link Title</string>
     <string name="example_link_description">Link URL</string>
 
+    <string name="phone_title">Relevant Phone Numbers</string>
+    <string name="example_phone">Phone Owner</string>
+    <string name="example_phone_number">Phone #</string>
+
+
+    <string name="yourqueryfor">Your query for</string>
+    <string name="returned">returned</string>
+    <string name="elements">elements</string>
+
 
 </resources>
