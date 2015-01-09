@@ -1,6 +1,7 @@
 package br.liveo.fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.SearchView.OnQueryTextListener;
@@ -12,15 +13,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
+
+import br.liveo.adapter.LinksAdapter;
 import br.liveo.navigationliveo.R;
 import br.liveo.utils.Constant;
 import br.liveo.utils.Menus;
 
-public class LinksFragment extends Fragment {
+public class LinksFragment extends ListFragment {
 
-    private TextView mTxtRoute;
     private boolean mSearchCheck;
+    protected List<ParseObject> mLinks;
 
     public LinksFragment newInstance(String text){
         LinksFragment mFragment = new LinksFragment();
@@ -36,16 +47,29 @@ public class LinksFragment extends Fragment {
 
         // TODO Auto-generated method stub
         View rootView = inflater.inflate(R.layout.links_fragment, container, false);
-
-        mTxtRoute = (TextView) rootView.findViewById(R.id.txtRoute);
-        mTxtRoute.setText(getArguments().getString(Constant.TEXT_FRAGMENT));
-
         rootView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT ));
         return rootView;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
+        //Query All Places from Parse
+        final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Links");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> place, ParseException e) {
+                if (e == null) {
+                    mLinks = place;
+
+                    LinksAdapter adapter = new LinksAdapter(getActivity(), mLinks);
+                    mlist.setAdapter(adapter);
+                } else {
+                }
+            }
+        });
+
         // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
         setHasOptionsMenu(true);

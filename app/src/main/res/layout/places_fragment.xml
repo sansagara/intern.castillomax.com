@@ -11,7 +11,7 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:layout_marginTop="16dp"
-    android:text="@string/places_title"
+    android:text="@string/links_title"
     android:textAppearance="?android:attr/textAppearanceMedium"
     android:textStyle="bold"
     android:textColor="@color/orange_dark"

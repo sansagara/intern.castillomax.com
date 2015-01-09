@@ -54,10 +54,8 @@ public class PlacesFragment extends ListFragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        // TODO Populate ListView with Data from Parse
 
-        //Query All Places
-
+        //Query All Places from Parse
         final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Clinicas");
