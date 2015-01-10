@@ -104,7 +104,7 @@ public class PhonesFragment extends ListFragment {
 					    	   	    
 		menu.findItem(Menus.ADD).setVisible(false);
 		menu.findItem(Menus.UPDATE).setVisible(false);		
-		menu.findItem(Menus.SEARCH).setVisible(true);		
+		menu.findItem(Menus.SEARCH).setVisible(true);
   	    
 		mSearchCheck = false;	
 	}	

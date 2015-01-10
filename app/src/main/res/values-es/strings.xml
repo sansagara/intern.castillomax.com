@@ -28,8 +28,8 @@
     <string name="example_phone">Persona</string>
     <string name="example_phone_number"># Telefono</string>
 
-    <string name="yourqueryfor">Su búsqueda de</string>
-    <string name="returned">devolvió</string>
+    <string name="yourqueryfor">Su busqueda de</string>
+    <string name="returned">devolvio</string>
     <string name="elements">elementos</string>
 
 </resources >

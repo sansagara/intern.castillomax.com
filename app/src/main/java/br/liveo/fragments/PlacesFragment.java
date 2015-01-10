@@ -146,7 +146,7 @@ public class PlacesFragment extends ListFragment {
                     if (e == null) {
                         mPlaces = place;
                         final Integer mPlacesLength = mPlaces.size();
-                        Toast.makeText(getActivity(), R.string.yourqueryfor + SearchQuery + R.string.returned + mPlacesLength +  R.string.elements, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.yourqueryfor) + SearchQuery + getString(R.string.returned) + mPlacesLength +  getString(R.string.elements), Toast.LENGTH_SHORT).show();
 
                         PlacesAdapter adapter = new PlacesAdapter(getActivity(), mPlaces);
                         mlist.setAdapter(adapter);

@@ -77,8 +77,8 @@ public class AboutFragment extends Fragment {
 	    searchView.setOnQueryTextListener(OnQuerySearchView);
 					    	   	    
 		menu.findItem(Menus.ADD).setVisible(true);
-		menu.findItem(Menus.UPDATE).setVisible(true);		
-		menu.findItem(Menus.SEARCH).setVisible(true);		
+		menu.findItem(Menus.UPDATE).setVisible(true);
+		menu.findItem(Menus.SEARCH).setVisible(true);
   	    
 		mSearchCheck = false;	
 	}	
