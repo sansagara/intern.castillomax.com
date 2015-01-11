@@ -1345,10 +1345,11 @@ containing a value of this type.
         public static final int link=0x7f020049;
         public static final int linkedin=0x7f02004a;
         public static final int maps=0x7f02004b;
-        public static final int rectangle_counter=0x7f02004c;
-        public static final int seletor_item_navigation=0x7f02004d;
-        public static final int twitter=0x7f02004e;
-        public static final int website=0x7f02004f;
+        public static final int notification_icon=0x7f02004c;
+        public static final int rectangle_counter=0x7f02004d;
+        public static final int seletor_item_navigation=0x7f02004e;
+        public static final int twitter=0x7f02004f;
+        public static final int website=0x7f020050;
     }
     public static final class id {
         public static final int ImgDrawer=0x7f090051;

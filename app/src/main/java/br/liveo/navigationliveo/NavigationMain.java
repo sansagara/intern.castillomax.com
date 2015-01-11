@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +21,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParsePush;
+import com.parse.SaveCallback;
 
 import br.liveo.adapter.NavigationAdapter;
 import br.liveo.fragments.AboutFragment;
@@ -42,15 +46,12 @@ public class NavigationMain extends ActionBarActivity{
 
 	private FragmentManager mFragmentManager;
 	private NavigationAdapter mNavigationAdapter;
-	private ActionBarDrawerToggleCompat mDrawerToggle;	
-		
+	private ActionBarDrawerToggleCompat mDrawerToggle;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
-        // Enable Local Datastore from Parse.
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "oLa5rBcC7WP6DuyN62ZBugrYToBSO2TWseZ6p89X", "zEPOBSozh4szqL80cD1BogXTFVjK3xu0PAGbd4XS");
-
+        Log.d("com.parse.push", "successfully entered NavigationMain onCreate.");
 		super.onCreate(savedInstanceState);		
 		getSupportActionBar().setIcon(R.drawable.ic_launcher);
 		
