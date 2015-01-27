@@ -49,12 +49,12 @@ public class PlacesAdapter extends ArrayAdapter {
 
         // title
         String place = placesObject.getString("Clinica");
-        place = place.substring(0,1).toUpperCase() + place.substring(1);
+        place = capitalizeString(place);
         holder.placeName.setText(place);
 
         // content
         String description = placesObject.getString("Direccion");
-        description = description.substring(0,1).toUpperCase() + description.substring(1);
+        description = capitalizeString(description);
         holder.placeDescription.setText(description);
 
         return convertView;
@@ -64,4 +64,19 @@ public class PlacesAdapter extends ArrayAdapter {
         TextView placeName;
         TextView placeDescription;
     }
+
+    public static String capitalizeString(String string) {
+        char[] chars = string.toLowerCase().toCharArray();
+        boolean found = false;
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i]) || chars[i]=='.' || chars[i]=='\'') { // You can add other chars here
+                found = false;
+            }
+        }
+        return String.valueOf(chars);
+    }
+
 }

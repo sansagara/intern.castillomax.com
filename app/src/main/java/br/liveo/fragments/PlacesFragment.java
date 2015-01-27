@@ -135,10 +135,10 @@ public class PlacesFragment extends ListFragment {
 
         @Override
         public boolean onQueryTextSubmit(final String SearchQuery) {
-            
+            final String SearchQuery2 = SearchQuery.toLowerCase();
             final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Clinicas");
-            query.whereContains("Clinica", SearchQuery);
+            query.whereContains("Clinica", SearchQuery2);
             query.orderByAscending("Clinica");
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
@@ -146,7 +146,7 @@ public class PlacesFragment extends ListFragment {
                     if (e == null) {
                         mPlaces = place;
                         final Integer mPlacesLength = mPlaces.size();
-                        Toast.makeText(getActivity(), getString(R.string.yourqueryfor) + SearchQuery + getString(R.string.returned) + mPlacesLength +  getString(R.string.elements), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), getString(R.string.yourqueryfor) +" "+ SearchQuery +" "+ getString(R.string.returned) +" "+ mPlacesLength +" "+  getString(R.string.elements), Toast.LENGTH_SHORT).show();
 
                         PlacesAdapter adapter = new PlacesAdapter(getActivity(), mPlaces);
                         mlist.setAdapter(adapter);

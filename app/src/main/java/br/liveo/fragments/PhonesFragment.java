@@ -17,6 +17,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -131,15 +132,18 @@ public class PhonesFragment extends ListFragment {
 	private OnQueryTextListener OnQuerySearchView = new OnQueryTextListener() {
 		
 		@Override
-		public boolean onQueryTextSubmit(String SearchQuery) {
+		public boolean onQueryTextSubmit(final String SearchQuery) {
+            final String SearchQuery2 = SearchQuery.toLowerCase();
             final ListView mlist = (ListView) getView().findViewById(android.R.id.list);
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Phones");
-            query.whereContains("phoneOwner", SearchQuery);
+            query.whereContains("phoneOwner", SearchQuery2);
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
-                public void done(List<ParseObject> place, ParseException e) {
+                public void done(List<ParseObject> phone, ParseException e) {
                     if (e == null) {
-                        mPhones = place;
+                        mPhones = phone;
+                        final Integer mPhonesLength = mPhones.size();
+                        Toast.makeText(getActivity(), getString(R.string.yourqueryfor) + " " + SearchQuery + " " + getString(R.string.returned) +" "+ mPhonesLength + " " + getString(R.string.elements), Toast.LENGTH_SHORT).show();
 
                         PhonesAdapter adapter = new PhonesAdapter(getActivity(), mPhones);
                         mlist.setAdapter(adapter);

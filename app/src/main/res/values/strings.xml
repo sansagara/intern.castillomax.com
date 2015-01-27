@@ -35,9 +35,9 @@
     <string name="example_phone_number">Phone #</string>
 
 
-    <string name="yourqueryfor">Your query for</string>
-    <string name="returned">returned</string>
-    <string name="elements">elements</string>
+    <string name="yourqueryfor">Your query for </string>
+    <string name="returned"> returned </string>
+    <string name="elements"> elements!</string>
 
 
 </resources>
