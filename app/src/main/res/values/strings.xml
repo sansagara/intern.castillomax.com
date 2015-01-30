@@ -14,7 +14,6 @@
     <string name="update">Update</string>
     <string name="drawer_open">Open drawer navigation</string>
     <string name="drawer_close">Navigation drawer Close</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Content -->
     <string name="website_url"><a href="http://www.castillomax.com">Our Website</a></string>
