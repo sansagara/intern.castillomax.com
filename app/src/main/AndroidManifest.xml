@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.castillomax.navigationliveo"
     android:installLocation="auto"
-    android:versionCode="1"
-    android:versionName="1" >
+    android:versionCode="3"
+android:versionName="3xSWZ" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -19,7 +19,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <permission android:protectionLevel="signature" android:name="com.castillomax.navigationliveo.permission.C2D_MESSAGE" />
-    <uses-permission android:name="br.liveo.navigationliveo.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.castillomax.navigationliveo.permission.C2D_MESSAGE" />
 
 
     <application
@@ -50,7 +50,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="br.liveo.navigationliveo" />
+                <category android:name="com.castillomax.navigationliveo" />
             </intent-filter>
         </receiver>
         <receiver

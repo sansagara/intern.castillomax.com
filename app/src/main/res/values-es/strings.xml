@@ -18,10 +18,10 @@
     <string name="drawer_close">Cerrar Navegacion</string>
 
     <!-- Content -->
-    <string name="website_url"><a href="http://www.castillomax.com">Our Website</a></string>
-    <string name="twitter_url"><a href="https://twitter.com/castillomax1">Our Twitter Feed</a></string>
-    <string name="linkedin_url"><a href="https://www.linkedin.com/company/5385675">Our LinkedIn Page</a></string>
-    <string name="maps_url"><a href="https://www.google.co.ve/maps/place/Castillomax+Oil+%26+Gas/@10.491196,-66.877526,17z/data=!3m1!4b1!4m2!3m1!1s0x8c2a58e0e63bf0a9:0xb58ad68105cdfe2">Our Locations</a></string>
+    <string name="website_url"><a href="http://www.castillomax.com">Nuestro Sitio Web</a></string>
+    <string name="twitter_url"><a href="https://twitter.com/castillomax1">Nuestro Twitter</a></string>
+    <string name="linkedin_url"><a href="https://www.linkedin.com/company/5385675">Nuestra Pagina de LinkedIn</a></string>
+    <string name="maps_url"><a href="https://www.google.co.ve/maps/place/Castillomax+Oil+%26+Gas/@10.491196,-66.877526,17z/data=!3m1!4b1!4m2!3m1!1s0x8c2a58e0e63bf0a9:0xb58ad68105cdfe2">Nuestras Oficinas</a></string>
 
 
     <string name="places_title">Lugares de Interes</string>
